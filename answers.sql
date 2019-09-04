@@ -99,3 +99,21 @@ SELECT * FROM employee where reports_to = 2;
 SELECT * FROM employee WHERE reports_to = 2;
 -- 6) Count how many people live in Lethbridge.
 SELECT COUNT(*) FROM employee WHERE city = 'Lethbridge';
+
+-- TABLE - INVOICE
+-- 1) Count how many orders were made from the USA.
+SELECT COUNT(invoice_id) FROM invoice WHERE billing_country = 'USA';
+-- 2) Find the largest order total amount.
+SELECT MAX(total) FROM invoice;
+-- 3) Find the smallest order total amount.
+SELECT MIN(total) FROM invoice;
+-- 4) Find all orders bigger than $5.
+SELECT * FROM invoice WHERE total > 5;
+-- 5) Count how many orders were smaller than $5.
+SELECT COUNT(*) FROM INVOICE WHERE total < 5;
+-- 6) Count how many orders were in CA, TX, or AZ (use IN).
+SELECT COUNT(*) FROM invoice WHERE billing_city IN ('CA', 'TX', 'AZ');
+-- 7) Get the average total of the orders.
+SELECT AVG(total) FROM invoice;
+-- 8) Get the total sum of the orders.
+SELECT SUM(total) FROM invoice;
